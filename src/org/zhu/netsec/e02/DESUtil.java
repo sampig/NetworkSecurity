@@ -15,8 +15,10 @@ import javax.crypto.spec.DESKeySpec;
 import org.zhu.netsec.util.StringUtil;
 
 /**
+ * A utility for DES encryption and decryption.
  * 
  * @author Chenfeng ZHU
+ * @see StringUtil
  *
  */
 public class DESUtil {
@@ -58,7 +60,7 @@ public class DESUtil {
     }
 
     /**
-     * 
+     * Encrypt the plain text with the key by DES.
      * <ul>
      * <li>AES/CBC/NoPadding (128)</li>
      * <li>AES/CBC/PKCS5Padding (128)</li>
@@ -78,8 +80,10 @@ public class DESUtil {
      * </ul>
      * 
      * @param plaintext
+     *            the plain text (in HEX)
      * @param key
-     * @return
+     *            the key (in HEX)
+     * @return the cipher text (in HEX)
      */
     public static String encrypt(String plaintext, String key) {
         byte[] plainbyte = StringUtil.convertHexToBytes(plaintext);
@@ -89,6 +93,15 @@ public class DESUtil {
         return ciphertext;
     }
 
+    /**
+     * Encrypt the plain text with the key by DES (in ECB mode without padding).
+     * 
+     * @param plainbyte
+     *            the plain text (in bytes[])
+     * @param keybyte
+     *            the key (in bytes[])
+     * @return the cipher text (in bytes[])
+     */
     public static byte[] encrypt(byte[] plainbyte, byte[] keybyte) {
         byte[] cipherbyte = null;
         try {
@@ -115,13 +128,13 @@ public class DESUtil {
     }
 
     /**
+     * Decrypt the cipher text with the key by DES.
      * 
      * @param ciphertext
      *            (in HEX)
      * @param key
      *            (in HEX)
-     * @return plaintext (in HEX)
-     * @see StringUtil
+     * @return the plain text (in HEX)
      */
     public static String decrypt(String ciphertext, String key) {
         byte[] cipherbyte = StringUtil.convertHexToBytes(ciphertext);
@@ -132,10 +145,14 @@ public class DESUtil {
     }
 
     /**
+     * Decrypt the cipher text with the key by DES (in ECB mode without
+     * padding).
      * 
      * @param cipherbyte
+     *            (in bytes[])
      * @param keybyte
-     * @return
+     *            (in bytes[])
+     * @return the plain text (in bytes[])
      */
     public static byte[] decrypt(byte[] cipherbyte, byte[] keybyte) {
         byte[] plainbyte = null;

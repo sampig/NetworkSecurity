@@ -43,6 +43,12 @@ public class StringUtil {
 
     private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
 
+    /**
+     * Convert bytes array to Hex string.
+     * 
+     * @param bytes
+     * @return string (in HEX)
+     */
     public static String convertBytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
         for (int j = 0; j < bytes.length; j++) {
@@ -53,6 +59,12 @@ public class StringUtil {
         return new String(hexChars);
     }
 
+    /**
+     * Convert Hex string to byte array.
+     * 
+     * @param hex
+     * @return byte array
+     */
     public static byte[] convertHexToBytes(String hex) {
         byte[] bytes = new byte[hex.length() / 2];
         for (int i = 0; i < hex.length(); i += 2) {

@@ -13,6 +13,9 @@ public class Task02 {
         t.partA();
     }
 
+    /**
+     * Calculate the probability.
+     */
     public void partA() {
         System.out.println(BirthdayAttacks.calZodiacProbability(2, 0));
     }

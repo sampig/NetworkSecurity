@@ -1,6 +1,7 @@
 package org.zhu.netsec.e02;
 
 /**
+ * Calculate all probabilities in Birthday Attack.
  * 
  * @author Chenfeng ZHU
  *
@@ -28,6 +29,7 @@ public class BirthdayAttacks {
      *            the type of calculation
      *            <ul>
      *            <li>0: normal distribution</li>
+     *            <li>Others:</li>
      *            </ul>
      * @return the probability
      */
@@ -39,6 +41,12 @@ public class BirthdayAttacks {
         }
     }
 
+    /**
+     * (Unfinished)
+     * 
+     * @param num
+     * @return
+     */
     public static double calZodiacProbability(int num) {
         return 0.0;
     }
